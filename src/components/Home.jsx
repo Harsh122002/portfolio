@@ -96,10 +96,11 @@ export default function Home() {
         </div>
       </div>
       {/* Other Components */}
-      <About />
+      <Portfolio />
       <Education />
       <Skill />
-      <Portfolio />
+     <About />
+
       <Contact />
     </>
   );
