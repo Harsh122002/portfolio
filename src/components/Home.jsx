@@ -86,7 +86,7 @@ export default function Home() {
           ref={imageRef}
         >
           <img
-            src="portfolio/myphoto.jpg"
+            src={"portfolio/myphoto.jpg"}
             alt="Harsh Chavada"
             className="rounded-lg max-w-full h-96"
           />

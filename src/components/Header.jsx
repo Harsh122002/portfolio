@@ -104,8 +104,8 @@ export default function Header() {
                   item === "Home"
                     ? "/portfolio"
                     : item === "Portfolio"
-                    ? "/Portfolio1"
-                    : `/${item}`
+                    ? "portfolio/Portfolio1"
+                    : `/portfolio/${item}`
                 }
                 className="text-lg hover:text-yellow-400"
               >
