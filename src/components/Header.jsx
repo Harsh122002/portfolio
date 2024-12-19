@@ -102,7 +102,7 @@ export default function Header() {
             <Link
               key={index}
               ref={(el) => (navLinksRef.current[index] = el)}
-              to={`/${item}`}
+              to={`/portfolio/${item}`}
               className="text-lg hover:text-yellow-400"
             >
               {item}
