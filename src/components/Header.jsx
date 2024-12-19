@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { FaBars } from 'react-icons/fa';
-import { AiOutlineClose } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import { gsap } from 'gsap';
+import React, { useState, useEffect, useRef } from "react";
+import { FaBars } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { gsap } from "gsap";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +11,7 @@ export default function Header() {
   const navLinksRef = useRef([]);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prevState) => !prevState);
   };
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Header() {
         opacity: 1,
         rotate: 0,
         duration: 1.5,
-        ease: 'elastic.out(1, 0.5)',
+        ease: "elastic.out(1, 0.5)",
       }
     );
 
@@ -36,7 +36,7 @@ export default function Header() {
         y: 0,
         duration: 0.8,
         stagger: 0.2,
-        ease: 'power3.out',
+        ease: "power3.out",
       }
     );
   }, []);
@@ -48,8 +48,8 @@ export default function Header() {
         duration: 0.5,
         opacity: 1,
         y: 0,
-        display: 'block',
-        ease: 'power3.out',
+        display: "block",
+        ease: "power3.out",
       });
 
       // GSAP staggered animation for mobile navigation links
@@ -61,7 +61,7 @@ export default function Header() {
           y: 0,
           duration: 0.5,
           stagger: 0.1,
-          ease: 'power3.out',
+          ease: "power3.out",
         }
       );
     } else {
@@ -70,8 +70,8 @@ export default function Header() {
         duration: 0.5,
         opacity: 0,
         y: -50,
-        display: 'none',
-        ease: 'power3.in',
+        display: "none",
+        ease: "power3.in",
       });
     }
   }, [menuOpen]);
@@ -81,10 +81,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <h1
-            ref={logoRef}
-            className="text-xl lg:text-5xl font-semibold"
-          >
+          <h1 ref={logoRef} className="text-xl lg:text-5xl font-semibold">
             Harsh
           </h1>
         </div>
@@ -98,33 +95,49 @@ export default function Header() {
 
         {/* Navigation (Visible on medium screens and up) */}
         <div className="hidden sm:flex md:flex space-x-4">
-          {['Home', 'About', 'Skills', 'Education', 'Portfolio', 'Contact'].map((item, index) => (
-            <Link
-              key={index}
-              ref={(el) => (navLinksRef.current[index] = el)}
-              to={`/portfolio/${item}`}
-              className="text-lg hover:text-yellow-400"
-            >
-              {item}
-            </Link>
-          ))}
+          {["Home", "About", "Education", "Portfolio", "Contact"].map(
+            (item, index) => (
+              <Link
+                key={index}
+                ref={(el) => (navLinksRef.current[index] = el)}
+                to={
+                  item === "Home"
+                    ? "/portfolio"
+                    : item === "Portfolio"
+                    ? "/Portfolio1"
+                    : `/${item}`
+                }
+                className="text-lg hover:text-yellow-400"
+              >
+                {item}
+              </Link>
+            )
+          )}
         </div>
       </div>
 
       {/* Mobile Menu (Visible when the menu is open on small screens) */}
       <div
         ref={menuRef}
-        className={`sm:block md:hidden bg-zinc-800 p-5 text-center shadow-lg absolute top-full left-0 right-0 hidden`}
+        className="sm:block md:hidden bg-zinc-800 p-5 text-center shadow-lg absolute top-full left-0 right-0 hidden"
       >
-        {['Home', 'About', 'Skills', 'Education', 'Portfolio', 'Contact'].map((item, index) => (
-          <Link
-            key={index}
-            to={`/${item}`}
-            className="block py-2 text-lg hover:text-yellow-400"
-          >
-            {item}
-          </Link>
-        ))}
+        {["Home", "About", "Education", "Portfolio", "Contact"].map(
+          (item, index) => (
+            <Link
+              key={index}
+              to={
+                item === "Home"
+                  ? "/portfolio"
+                  : item === "Portfolio"
+                  ? "/Portfolio1"
+                  : `/${item}`
+              }
+              className="block py-2 text-lg hover:text-yellow-400"
+            >
+              {item}
+            </Link>
+          )
+        )}
       </div>
     </div>
   );

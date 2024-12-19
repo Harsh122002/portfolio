@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import About from "./About";
 import Education from "./Education";
 import Contact from "./Contact";
-import Portfolio from "./Portfolio";
+import Portfolio from "./Portfolio1";
 import Skill from "./Skills";
 
 export default function Home() {
@@ -50,10 +50,7 @@ export default function Home() {
             A passionate Full Stack Developer with expertise in modern web
             technologies.
           </p>
-          <div
-            className="text-center sm:ml-20 ml-4"
-            ref={socialLinksRef}
-          >
+          <div className="text-center sm:ml-20 ml-4" ref={socialLinksRef}>
             <div className="flex space-x-4">
               <a
                 href="https://facebook.com"
@@ -89,7 +86,7 @@ export default function Home() {
           ref={imageRef}
         >
           <img
-            src="../myphoto.jpg"
+            src="portfolio/myphoto.jpg"
             alt="Harsh Chavada"
             className="rounded-lg max-w-full h-96"
           />
@@ -99,7 +96,7 @@ export default function Home() {
       <Portfolio />
       <Education />
       <Skill />
-     <About />
+      <About />
 
       <Contact />
     </>

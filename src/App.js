@@ -1,15 +1,15 @@
 // src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import Skills from './components/Skills';
-import Education from './components/Education';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import About from './components/About';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
+import About from "./components/About";
+import Portfolio1 from "./components/Portfolio1";
+import Skill from "./components/Skills";
 
 function App() {
   return (
@@ -18,11 +18,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/portfolio" element={<Home />} />
-          <Route path="/portfolio/Skills" element={<Skills />} />
-          <Route path="/portfolio/Education" element={<Education />} />
-          <Route path="/portfolio/Portfolio" element={<Portfolio />} />
-          <Route path="/portfolio/Contact" element={<Contact />} />
-          <Route path="/portfolio/About" element={<About />} />
+          <Route path="/Education" element={<Education />} />
+          <Route path="/Portfolio1" element={<Portfolio1 />} />
+          <Route path="/Skills" element={<Skill />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/About" element={<About />} />
         </Routes>
       </div>
       <Footer />
