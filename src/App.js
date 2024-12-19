@@ -13,16 +13,16 @@ import Skill from "./components/Skills";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <Header />
       <div className="App">
         <Routes>
-          <Route path="/portfolio" element={<Home />} />
-          <Route path="/portfolio/Education" element={<Education />} />
-          <Route path="/portfolio/Portfolio1" element={<Portfolio1 />} />
-          <Route path="/portfolio/Skills" element={<Skill />} />
-          <Route path="/portfolio/Contact" element={<Contact />} />
-          <Route path="/portfolio/About" element={<About />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/Education" element={<Education />} />
+          <Route path="/Portfolio1" element={<Portfolio1 />} />
+          <Route path="/Skills" element={<Skill />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/About" element={<About />} />
         </Routes>
       </div>
       <Footer />
